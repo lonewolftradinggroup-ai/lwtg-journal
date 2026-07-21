@@ -687,6 +687,7 @@
   <button class="filter-btn active" onclick="setStratFilter('ALL')">ALL</button>
   <button class="filter-btn s-MITS" onclick="setStratFilter('MITS')">MITS</button>
   <button class="filter-btn s-QC-Signals" onclick="setStratFilter('QC Signals')">QC Signals</button>
+  <button class="filter-btn s-QC-Trend" onclick="setStratFilter('QC Trend')">QC Trend</button>
 </div>
 <div class="filter-row instrument-row">
   <span class="filter-label">Instrument:</span>
@@ -923,7 +924,7 @@ function renderSummary() {
 
   // Monthly strategy breakdown pills
   const stratColors = {
-    "MITS":"#3a8fff","QC Signals":"#00e87a"
+    "MITS":"#3a8fff","QC Signals":"#00e87a","QC Trend":"#f59e0b"
   };
   const stratBreakEl = document.getElementById("month-strat-breakdown");
   if (stratBreakEl) {
@@ -1080,7 +1081,7 @@ function showDetail(dateStr) {
 
   // Strategy breakdown
   const stratColors = {
-    "MITS":"#3a8fff","QC Signals":"#00e87a"
+    "MITS":"#3a8fff","QC Signals":"#00e87a","QC Trend":"#f59e0b"
   };
   const strategies = [...new Set(allDayTrades.map(t => t.strategy))].filter(Boolean).sort();
   if (strategies.length >= 1 && activeStratFilter === "ALL") {
