@@ -12,7 +12,7 @@ A calendar-based trade journal that pulls directly from your Google Sheet, shows
 
 No download, no setup. Just open:
 
-**[https://lonewolftradinggroup-ai.github.io/lwtg-journal/journal.html](https://lonewolftradinggroup-ai.github.io/lwtg-journal/journal.html)**
+**[https://lonewolftradinggroup-ai.github.io/lwtg-journal/](https://lonewolftradinggroup-ai.github.io/lwtg-journal/)**
 
 On first launch the Connect dialog asks for your GAS /exec URL. Paste it, click Save & Connect. Done. The URL is remembered in your browser.
 
