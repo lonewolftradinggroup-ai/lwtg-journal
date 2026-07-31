@@ -12,7 +12,7 @@ A calendar-based trade journal that pulls directly from your Google Sheet, shows
 
 No download, no setup. Just open:
 
-**[https://lonewolftradinggroup-ai.github.io/lwtg-trade-journal](https://lonewolftradinggroup-ai.github.io/lwtg-trade-journal)**
+**[https://lonewolftradinggroup-ai.github.io/lwtg-mits-system](https://lonewolftradinggroup-ai.github.io/lwtg-mits-system)**
 
 On first launch the Connect dialog asks for your GAS /exec URL. Paste it, click Save & Connect. Done. The URL is remembered in your browser.
 
@@ -24,7 +24,7 @@ On first launch the Connect dialog asks for your GAS /exec URL. Paste it, click 
 
 The journal is read-only (no Ghost webhooks needed), so Option A works for almost everyone. Run locally only if you need to work offline or want to modify the file.
 
-**Step 1 — Download `index.html`** from the [latest release](https://github.com/lonewolftradinggroup-ai/lwtg-trade-journal/releases).
+**Step 1 — Download `index.html`** from the [latest release](https://github.com/lonewolftradinggroup-ai/lwtg-mits-system/releases).
 
 **Step 2 — Start a local web server**
 
