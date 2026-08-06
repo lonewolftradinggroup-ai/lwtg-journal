@@ -6,25 +6,23 @@ A calendar-based trade journal that pulls directly from your Google Sheet, shows
 
 ---
 
-## 🚀 Quick Start — Two Ways to Run
+## 🚀 Quick Start
 
-### Option A — GitHub Pages (recommended for most users)
+### ⚠️ GitHub Pages — Limited Support
 
-No download, no setup. Just open:
+The GitHub Pages hosted version at:
 
 **[https://lonewolftradinggroup-ai.github.io/lwtg-journal/](https://lonewolftradinggroup-ai.github.io/lwtg-journal/)**
 
-On first launch the Connect dialog asks for your GAS /exec URL. Paste it, click Save & Connect. Done. The URL is remembered in your browser.
-
-> This is all most users need. The journal shows your full trade calendar, monthly stats, and day-by-day breakdowns from your Google Sheet.
+is available for reference but **trade data will not load** due to a Google Apps Script cross-origin (CORS) limitation. GitHub Pages cannot fetch data directly from GAS web apps. Use Option A (local) below for full functionality.
 
 ---
 
-### Option B — Local
+### Option A — Local (Recommended)
 
-The journal is read-only (no Ghost webhooks needed), so Option A works for almost everyone. Run locally only if you need to work offline or want to modify the file.
+Full functionality. Run locally in under 60 seconds.
 
-**Step 1 — Download `index.html`** from the [latest release](https://github.com/lonewolftradinggroup-ai/lwtg-mits-system/releases).
+**Step 1 — Download `journal.html`** from this repo.
 
 **Step 2 — Start a local web server**
 
@@ -33,14 +31,14 @@ Open a terminal in the folder containing the file and run:
 python -m http.server 8080
 ```
 
-> ⚠️ You must open the app via `http://localhost:8080` — not by double-clicking the file. Opening `index.html` directly uses `file://` which blocks connections to Google Sheets.
+> ⚠️ You must open the app via `http://localhost:8080` — not by double-clicking the file. Opening `journal.html` directly uses `file://` which blocks connections to Google Sheets.
 
 **Step 3 — Open in Chrome**
 ```
-http://localhost:8080/index.html
+http://localhost:8080/journal.html
 ```
 
-On first launch the Connect dialog appears — paste your GAS /exec URL and click Save & Connect.
+On first launch the Connect dialog appears — paste your GAS /exec URL and click Save & Connect. The URL is remembered in your browser.
 
 ---
 
@@ -71,7 +69,7 @@ To find your GAS URL: Apps Script → Deploy → Manage Deployments → copy the
 
 **Strategy:** ALL · MITS · QC Signals · QC Trend
 
-**Instrument:** ALL · MES · MNQ · M2K · MGC · MYM
+**Instrument:** ALL · MES · MNQ · M2K · MGC · MYM · MCL
 
 Filters apply to the calendar view and day detail panel simultaneously.
 
@@ -92,6 +90,7 @@ Use **◀ Prev** / **Today** / **Next ▶** to move between months. The calendar
 | M2K | Orange |
 | MGC | Gold |
 | MYM | Purple |
+| MCL | Amber |
 
 ---
 
@@ -99,9 +98,11 @@ Use **◀ Prev** / **Today** / **Next ▶** to move between months. The calendar
 
 | Problem | Fix |
 |---|---|
+| "Failed to fetch" or "Sheets poll failed" on GitHub Pages | Expected — GAS CORS limitation. Use local hosting instead (Option A above) |
+| "JSONP timeout" | GAS deployment may be stale — redeploy to existing deployment and retry |
 | Connect dialog keeps appearing | GAS URL not saved — paste your /exec URL and click Save & Connect |
 | Calendar shows no trades | Check that your GAS URL is correct and the TradeLog sheet has data |
-| App won't load | You opened `index.html` directly — use `http://localhost:8080/index.html` instead |
+| App won't load | You opened `journal.html` directly — use `http://localhost:8080/journal.html` instead |
 | Trades missing for a date | Webhook timeouts may have caused gaps — check TradingView alert log and add manual entries to TradeLog |
 
 ---
@@ -110,7 +111,8 @@ Use **◀ Prev** / **Today** / **Next ▶** to move between months. The calendar
 
 | File | Description |
 |---|---|
-| `index.html` | The Trade Journal app — safe to share, no credentials |
+| `journal.html` | The Trade Journal app — safe to share, no credentials |
+| `index.html` | Legacy file — use `journal.html` instead |
 
 ---
 
